@@ -44,6 +44,8 @@ INSTALLED_APPS = [
 
     'rest_auth',
     'rest_auth.registration',
+
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,5 @@ SITE_ID = 1
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
