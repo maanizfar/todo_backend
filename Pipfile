@@ -12,6 +12,7 @@ rope = "*"
 django = "*"
 django-rest-auth = "*"
 django-allauth = "*"
+drf-yasg = "*"
 
 [requires]
 python_version = "3.8"
