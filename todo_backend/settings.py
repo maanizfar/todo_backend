@@ -8,10 +8,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'l9v_^!x6-ok(ul8*m(%gf&2i4l@+n&=y5qv(^6^a(3l6#8-n1$'
+# SECRET_KEY = 'l9v_^!x6-ok(ul8*m(%gf&2i4l@+n&=y5qv(^6^a(3l6#8-n1$'
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY', 'l9v_^!x6-ok(ul8*m(%gf&2i4l@+n&=y5qv(^6^a(3l6#8-n1$')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = False
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+
 
 ALLOWED_HOSTS = ['*']
 
@@ -137,3 +141,11 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+CSRF_COOKIE_SECURE = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+}
