@@ -13,6 +13,7 @@ django = "*"
 django-rest-auth = "*"
 django-allauth = "*"
 drf-yasg = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"

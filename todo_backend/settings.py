@@ -13,7 +13,7 @@ SECRET_KEY = 'l9v_^!x6-ok(ul8*m(%gf&2i4l@+n&=y5qv(^6^a(3l6#8-n1$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 AUTHENTICATION_BACKENDS = (
